@@ -1,10 +1,10 @@
-name: Java CI TEST
+name: Java CI with Maven
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -17,5 +17,5 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Build APP
+    - name: Build with Maven
       run: mvn -B package --file profile_markdown.iml
